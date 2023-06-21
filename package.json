@@ -1,0 +1,37 @@
+{
+  "name": "enuts",
+  "version": "1.0.0",
+  "description": "An online shop for delicious nuts.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node -r esm app.js",
+    "dev": "nodemon -r esm app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Devin-Edwards8/eNuts.git"
+  },
+  "author": "Devin Edwards",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Devin-Edwards8/eNuts/issues"
+  },
+  "homepage": "https://github.com/Devin-Edwards8/eNuts#readme",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "esm": "^3.2.25",
+    "express": "^4.18.2",
+    "mongoose": "^6.7.3",
+    "nodemon": "^2.0.22",
+    "prettier": "^2.8.8"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.22.5",
+    "eslint": "^8.43.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0"
+  }
+}
