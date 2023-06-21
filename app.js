@@ -1,8 +1,8 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import { userController } from './controller';
+import { userController } from './controller/index.js';
+import mongoose from 'mongoose';
 
-const mongoose = require('mongoose');
 const atlas_uri = "mongodb+srv://enutsadmin:R1x5NRMcpW5l5ujb@cluster0.cpim715.mongodb.net/?retryWrites=true&w=majority"
 
 const app = express();
