@@ -2,8 +2,11 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import { userController, productController } from './controller/index.js';
+import './load.environment.js';
 
-const atlasUri = 'mongodb+srv://enutsadmin:R1x5NRMcpW5l5ujb@cluster0.cpim715.mongodb.net/?retryWrites=true&w=majority';
+const atlasUri = process.env.ATLAS_URI || "";
+
+const PORT = process.env.PORT || 8080;
 
 const app = express();
 
@@ -13,7 +16,7 @@ app.use(bodyParser.json());
 app.use('/', userController);
 app.use('/', productController)
 
-app.listen(8080, () => {
+app.listen(PORT, () => {
   console.log('Server is running on port 8080');
   mongoose.connect(atlasUri).then(() => {
     console.log('Connected to mongodb at port 27017');
