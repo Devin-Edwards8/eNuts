@@ -1,5 +1,5 @@
-import userController from "./user.controller.js";
+import userController from './user.controller.js';
 
 export {
-    userController
+  userController,
 };
