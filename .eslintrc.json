@@ -1,0 +1,10 @@
+{
+    "extends": "eslint:recommended",
+    "rules": {
+        "indent": [1, 2]
+    },
+    "parserOptions": {
+        "sourceType": "module",
+        "ecmaVersion": "latest"
+    }
+}
