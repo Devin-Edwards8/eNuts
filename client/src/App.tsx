@@ -7,7 +7,7 @@ function App() {
   const getUsers = async () => {
     await fetch("http://localhost:8080/users")
       .then(res => res.json())
-      .then(data => data.map(user => 
+      .then(data => data.map((user: { email: string }) => 
         user.email
       ))
       .then(userList => setUsers(userList))
