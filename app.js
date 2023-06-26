@@ -1,6 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
+import cors from 'cors';
 import { userController, productController } from './controller/index.js';
 import './load.environment.js';
 
@@ -12,6 +13,7 @@ const app = express();
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(cors())
 
 app.use('/', userController);
 app.use('/', productController)
