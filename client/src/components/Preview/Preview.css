@@ -1,0 +1,6 @@
+.preview { 
+    width: 20vw;
+    aspect-ratio: 1/1;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
