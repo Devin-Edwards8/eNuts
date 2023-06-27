@@ -8,11 +8,12 @@
     align-items: center;
 }
 
-.header h2 {
+.header h2 a {
     font-size: 2rem;
     color: var(--primary-color);
     cursor: pointer;
     font-weight: bold;
+    text-decoration: none;
 }
 
 .navbar {
@@ -28,7 +29,18 @@
     font-size: 1.5rem;
 }
 
-.navbar p:hover {
+.navbar a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: var(--text-color);
+}
+
+.navbar p:hover{
+    cursor: pointer;
+    padding-bottom: .2rem;
+}
+
+.navbar a:hover{
     cursor: pointer;
     padding-bottom: .2rem;
 }

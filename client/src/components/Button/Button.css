@@ -4,8 +4,9 @@
     cursor: pointer;
 }
 
-.button p {
-    margin: 0;
+a .button {
+    text-decoration: none;
+    color: var(--text-color)
 }
 
 .primary {
