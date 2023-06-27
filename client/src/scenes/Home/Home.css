@@ -1,27 +1,39 @@
-
 .homepage .content {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-    height: 85vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 85vh;
 }
 
 .homepage .content img {
-    flex-shrink: 1;
-    width: 45vw;
-    aspect-ratio: 1 / 1;
+  flex-shrink: 1;
+  width: 45vw;
+  aspect-ratio: 1 / 1;
 }
 
 .homepage .content .text {
-    width: 33vw;
+  width: 33vw;
 }
 
 .homepage .content .text h1 {
-    font-size: 3.5rem;
-    line-height: 4.2rem;
+  font-size: 3.5rem;
+  line-height: 4.2rem;
+}
+
+.homepage .content .text .gradient {
+  background: -webkit-linear-gradient(left, var(--accent-color), var(--primary-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .homepage .content .text p {
-    font-size: 1.7rem;
+  font-size: 1.7rem;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: row;
+    gap: 2vw;
 }

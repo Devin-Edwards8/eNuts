@@ -1,0 +1,21 @@
+.button {
+    padding: .7rem 2rem .7rem 2rem;
+    border-radius: .2rem;
+    cursor: pointer;
+}
+
+.button p {
+    margin: 0;
+}
+
+.primary {
+    background-color: var(--primary-color);
+}
+
+.secondary {
+    background-color: var(--secondary-color);
+}
+
+.accent {
+    background-color: var(--accent-color);
+}
