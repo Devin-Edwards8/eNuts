@@ -1,31 +1,22 @@
-import { useState } from 'react';
-import Preview from '../../components/Preview/Preview';
+import './Home.css';
+import Navbar from '../../components/Navbar/Navbar';
+import PromotionBar from '../../components/PromotionBar/PromotionBar';
+import walnuts from '../../assets/walnuts.png'
 
 function Home() {
-  const [products, setProducts] = useState([])
-
-  const getProducts = async () => {
-    await fetch("http://localhost:8080/products")
-      .then(res => res.json())
-      .then(productList => setProducts(productList))
-      .catch(err => {
-        window.alert(err);
-        return;
-      })
-  }
-  
   return (
     <div className="homepage">
-      <h1>eNuts</h1>
-      <div className="card">
-        <button onClick={() => getProducts()}>
-              Get Products
-        </button>
-        {products.map((product: {name: string, price: number, popularItem: boolean}) => 
-          <Preview name={product.name} price={product.price} />)}
+      <Navbar />
+      <div className="content">
+        <div className="text">
+          <h1>Delicious Nuts <br/>Excellent Service</h1>
+          <p>Check out one of our locations or take advantage of our delivery services!</p>
+        </div>
+        <img src={walnuts} alt="walnuts" />
       </div>
+      <PromotionBar />
     </div>
-  )
+  );
 }
 
 export default Home;
