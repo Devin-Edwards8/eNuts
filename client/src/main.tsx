@@ -2,12 +2,16 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import Home from "./scenes/Home/Home";
 import Shop from "./scenes/Shop/Shop";
+import Map from "./scenes/Map/Map";
+import About from "./scenes/About/About";
+import ErrorElement from "./scenes/Error/Error";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 const router = createBrowserRouter([
   { 
     path: "/", 
-    element: <Home />
+    element: <Home />,
+    errorElement: <ErrorElement />
   },
   {
     path: "/shop",
@@ -18,13 +22,17 @@ const router = createBrowserRouter([
         .then(res => res.json())
     },
 
-    errorElement: <Home />
+    errorElement: <ErrorElement />
   },
   {
     path: "/about",
+    element: <About />,
+    errorElement: <ErrorElement />
   },
   {
-    path: "/map"
+    path: "/locations",
+    element: <Map />,
+    errorElement: <ErrorElement />
   }
 ]);
 
