@@ -21,11 +21,8 @@
   line-height: 4.2rem;
 }
 
-.homepage .content .text .gradient {
-  background: -webkit-linear-gradient(left, var(--accent-color), var(--primary-color));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+.homepage .content .text .emphasis {
+  color: var(--primary-color);
 }
 
 .homepage .content .text p {

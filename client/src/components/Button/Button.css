@@ -4,11 +4,6 @@
     cursor: pointer;
 }
 
-a .button {
-    text-decoration: none;
-    color: var(--text-color)
-}
-
 .primary {
     background-color: var(--primary-color);
 }

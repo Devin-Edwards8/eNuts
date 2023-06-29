@@ -10,14 +10,30 @@
 }
 
 .product-filter {
-    width: 20vw;
+    width: 23vw;
+    min-height: 90vh;
     height: 100%;
+    padding: 1vw;
+}
+
+.product-filter h1 {
+    font-size: 1.5rem;
+    margin: 1rem 0 .5rem 0;
+}
+
+.product-filter .rule {
+    width: 23vw;
+    border-top: .01rem solid var(--secondary-color);
+}
+
+.product-header {
+    width: 75vw;
+    height: calc(3rem + 1vw);
 }
 
 .product-container {
     display: flex;
-    width: 60vw;
+    width: 75vw;
     flex-direction: row;
-    gap: 5vw;
     flex-wrap: wrap;
 }

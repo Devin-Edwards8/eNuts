@@ -1,9 +1,21 @@
 :root {
-  --background-color: #ffffff;
-  --primary-color: #b29bcf;
-  --secondary-color: #ece7f3;
-  --accent-color: #bfacd7;
-  --text-color: #0f0a15;
+  /* muted purple scheme */
+  /*
+  --background-color: #fafafa;
+  --primary-color: #c2bbc3;
+  --secondary-color: #e9e7e8;
+  --accent-color: #c3bbc0;
+  --text-color: #0d0c0e;
+  --inverted-text-color: #0d0c0e;
+  */
+
+  /* dark brown scheme */
+  --background-color: #faf4f0;
+  --primary-color: #744b2a;
+  --secondary-color: #ffffff;
+  --accent-color: #613f23;
+  --text-color: #25180e;
+  --inverted-text-color: #faf4f0;
 
   font-family: 'Lato', sans-serif;
 
@@ -12,6 +24,14 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+}
+
+.inverted-text-color {
+  color: var(--background-color);
+}
+
+.normal-text-color {
+  color: var(--text-color);
 }
 
 body {

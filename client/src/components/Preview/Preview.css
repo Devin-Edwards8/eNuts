@@ -1,7 +1,57 @@
 .preview { 
-    width: 20vw;
+    position: relative;
+    width: calc(23vw - 0.1rem);
+    padding: 1vw;
     aspect-ratio: 1/1;
-    border-radius: 10px;
+    text-align: left;
+    border: solid .01rem var(--secondary-color);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.preview:hover {
+    border: solid 0.01rem var(--accent-color);
+    cursor: pointer;
+}
+
+.preview .star-rating {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: .4rem;
+}
+
+.preview .star-rating p {
+    font-size: 1rem;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+.preview h1 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+.cart-icon {
+    width: 5rem;
+    aspect-ratio: 1 / 1;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.best-seller-tag {
+    width: 6.5rem;
+    height: 2rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    clip-path: polygon(0 0, 0 100%, 85% 100%, 100% 0);
     background-color: var(--secondary-color);
-    text-align: center;
+}
+
+.best-seller-tag p {
+    margin: .5rem;
 }

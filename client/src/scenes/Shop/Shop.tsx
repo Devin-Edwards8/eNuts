@@ -17,11 +17,17 @@ function Shop() {
       <Navbar location="shop"/>
       <div className="content">
         <div className="product-filter">
-          <p>hello</p>
+          <h1>Filters</h1>
+          <div className="rule" />
         </div>
-        <div className="product-container">
-          {products.map((product: {name: string, price: number, popularItem: boolean}) => 
-            <Preview name={product.name} price={product.price} />)}
+        <div>
+          <div className="product-header">
+            
+          </div>
+          <div className="product-container">
+            {products.map((product: {name: string, price: number, popularItem: boolean}) => 
+              <Preview name={product.name} price={product.price} popularItem={product.popularItem} />)}
+          </div>
         </div>
       </div>
     </div>
