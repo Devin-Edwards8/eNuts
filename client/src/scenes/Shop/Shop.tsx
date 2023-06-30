@@ -1,6 +1,7 @@
 import "./Shop.css"
 import Preview from "../../components/Preview/Preview";
 import Navbar from "../../components/Navbar/Navbar";
+// import Select from "react-select";
 import { useLoaderData } from "react-router-dom";
 
 function Shop() {
@@ -11,6 +12,11 @@ function Shop() {
   }
 
   const products = useLoaderData() as productResponse[]; 
+  const itemsPerPage = [
+    { value: 12, label: "12" },
+    { value: 24, label: "24" },
+    { value: 36, label: "36" }
+  ]
 
   return (
     <div className="shop">
@@ -22,11 +28,14 @@ function Shop() {
         </div>
         <div>
           <div className="product-header">
-            
+            <h1>{products.length} Results</h1>
+            <div style={{display: "flex", flexDirection: "row", alignItems: "center"}}>
+              <h2>Items Per Page</h2>
+            </div>
           </div>
           <div className="product-container">
-            {products.map((product: {name: string, price: number, popularItem: boolean}) => 
-              <Preview name={product.name} price={product.price} popularItem={product.popularItem} />)}
+            {products.map((product: Product) => 
+              <Preview product={product}/>)}
           </div>
         </div>
       </div>
