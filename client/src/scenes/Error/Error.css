@@ -1,28 +1,25 @@
-.error-element {
-    min-height: 100vh;
-    width: 100vw;
-}
-
-.error-element .content {
+.error-element  {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
     height: 90vh;
+    width: 100vw;
 }
 
-.error-element .content h1 {
+.error-element h1 {
     font-size: 5rem;
     color: var(--accent-color)
 }
 
-.error-element .content h2 {
+.error-element h2 {
     font-size: 2rem;
     margin-bottom: 2rem;
 }
 
-.error-element .content img {
+.error-element img {
     flex-shrink: 1;
     width: 40vw;
+    max-height: 90vh;
     aspect-ratio: 1 / 1;
 }

@@ -6,9 +6,9 @@ import walnuts from "../../assets/walnuts.png"
 
 function Home() {
   return (
-    <div className="homepage">
+    <div>
       <Navbar location='home'/>
-      <div className="content">
+      <div className="homepage">
         <div className="text">
           <h1>Delicious <span className="emphasis">Nuts</span> <br/>Excellent Service</h1>
           <p>Check out one of our locations or take advantage of our delivery services!</p>

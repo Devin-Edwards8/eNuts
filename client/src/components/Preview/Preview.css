@@ -2,13 +2,18 @@
     position: relative;
     width: calc(23vw - 0.1rem);
     padding: 1vw;
-    aspect-ratio: 1/1;
     text-align: left;
     border: solid .01rem var(--secondary-color);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: space-between;
+}
+
+.preview-image {
+    align-self: center;
+    height: 25vh;
+    width: auto;
+    max-width: 100%;
 }
 
 .preview:hover {

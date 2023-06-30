@@ -1,4 +1,6 @@
 .header {
+    position: fixed;
+    top: 0;
     display: flex;
     flex-direction: row;
     width: 95vw;
@@ -26,12 +28,12 @@
 }
 
 .navbar p {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 }
 
 .navbar a {
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: var(--text-color);
 }
 

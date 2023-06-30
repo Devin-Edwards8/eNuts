@@ -1,31 +1,32 @@
-.homepage .content {
+.homepage {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
   height: 85vh;
+  margin-top: 10vh;
 }
 
-.homepage .content img {
+.homepage img {
   flex-shrink: 1;
   width: 45vw;
   aspect-ratio: 1 / 1;
 }
 
-.homepage .content .text {
+.homepage .text {
   width: 33vw;
 }
 
-.homepage .content .text h1 {
+.homepage .text h1 {
   font-size: 3.5rem;
   line-height: 4.2rem;
 }
 
-.homepage .content .text .emphasis {
+.homepage .text .emphasis {
   color: var(--primary-color);
 }
 
-.homepage .content .text p {
+.homepage .text p {
   font-size: 1.7rem;
 }
 

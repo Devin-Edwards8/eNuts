@@ -11,16 +11,16 @@ function ErrorElement() {
   }
 
   return (
-    <div className="error-element">
+    <div>
       <Navbar location="error"/>
-      <div className="content">
+      <div className="error-element">
         <div>
           <h1>Sorry :(</h1>
           <h2>We couldn't process your request. </h2>
           <h2>Please try again.</h2>
           <div className="button-container">
-            <Button buttonType="primary" destination="..">Home</Button>
-            <Button buttonType="secondary" listener={listener}>View Error Message</Button>
+            <Button buttonType="primary" textType="inverted-text-color" destination="..">Home</Button>
+            <Button buttonType="secondary" textType="normal-text-color" listener={listener}>View Error Message</Button>
           </div>
         </div>
         <img src={sadPeanut} alt="ashamed peanut" className=""/>

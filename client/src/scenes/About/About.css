@@ -1,0 +1,17 @@
+.about {
+    height: 90vh;
+    margin-top: 10vh;
+}
+
+.about .image img{
+    width: 50vw;
+    height: auto;
+}
+
+.content .story h1 {
+    font-size: 3.5rem;
+}
+
+.content .story p {
+    font-size: 1.2rem;
+}
