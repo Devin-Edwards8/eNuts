@@ -40,9 +40,15 @@
 .navbar p:hover{
     cursor: pointer;
     padding-bottom: .2rem;
+    text-decoration: underline;
+    text-underline-offset: .25rem;
+    text-decoration-color: var(--secondary-color);
 }
 
 .navbar a:hover{
     cursor: pointer;
     padding-bottom: .2rem;
+    text-decoration: underline;
+    text-underline-offset: .25rem;
+    text-decoration-color: var(--secondary-color);
 }

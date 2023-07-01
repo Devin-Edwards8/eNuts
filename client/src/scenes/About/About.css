@@ -1,17 +1,36 @@
 .about {
-    height: 90vh;
+    min-height: 85vh;
     margin-top: 10vh;
+    align-items: flex-start;
 }
 
-.about .image img{
-    width: 50vw;
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.about img {
+    width: 45vw;
     height: auto;
+    margin: 5%;
+    flex-shrink: 1;
 }
 
-.content .story h1 {
-    font-size: 3.5rem;
+.about .story {
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+    width: 45vw;
+    margin-top: 8vh;
 }
 
-.content .story p {
+.about .story h1 {
+    font-size: 3rem;
+    color: var(--accent-color);
+    margin: 0;
+}
+
+.about .story p {
     font-size: 1.2rem;
 }

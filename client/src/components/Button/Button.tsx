@@ -8,7 +8,7 @@ interface Listener {
 function Button(props: {children: string, buttonType: string, textType: string, destination?: string, listener?: Listener}) {
   if(props.listener) {
     const listener = props.listener ?? function() {return}
-    return <div className={"button " + props.buttonType} onClick={() => listener()}>{props.children}</div>
+    return <div className={"button " + props.buttonType} onClick={() => listener()}><p className={props.textType} style={{margin: 0}}>{props.children}</p></div>
   }
   if(props.destination) {
     const destination = props.destination ?? "";
@@ -18,7 +18,7 @@ function Button(props: {children: string, buttonType: string, textType: string, 
       </Link>
     );
   }
-  return <></>
+  return <div className={"button " + props.buttonType}><p className={props.textType} style={{margin: 0}}>{props.children}</p></div>
 }
 
 export default Button;

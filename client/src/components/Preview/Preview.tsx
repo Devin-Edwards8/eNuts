@@ -13,7 +13,7 @@ function Preview(props: {product: Product}) {
 
       {/* relative elements */}
       <img src={productImg} alt="can of planter's peanuts" className="preview-image"/>
-      <div style={{height: "30%", overflow: "hidden"}}>
+      <div style={{height: "30%"}}>
         <h1>{props.product.name}</h1>
         <p>${props.product.price.toFixed(2)}</p>
         <div className="star-rating">
