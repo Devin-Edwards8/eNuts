@@ -1,32 +1,45 @@
 import "./Shop.css"
 import Preview from "../../components/Preview/Preview";
+import Dropdown from "../../components/Dropdown/Dropdown";
 import Navbar from "../../components/Navbar/Navbar";
 // import Select from "react-select";
 import { useLoaderData } from "react-router-dom";
 
 function Shop() {
-  interface productResponse {
-    name: string,
-    price: number,
-    popularItem: boolean
-  }
+  const products = useLoaderData() as Product[]; 
 
-  const products = useLoaderData() as productResponse[]; 
-  const itemsPerPage = [
-    { value: 12, label: "12" },
-    { value: 24, label: "24" },
-    { value: 36, label: "36" }
-  ]
+  // TODO: add selection to toggle results per page
+  // const itemsPerPage = [
+  //   { value: 12, label: "12" },
+  //   { value: 24, label: "24" },
+  //   { value: 36, label: "36" }
+  // ]
+
+  // TODO: handle filter check
+  // const handleCheck = (cb: object) => {
+  //   console.log(cb)
+  // }
+
+  // TODO: figure out how to fill out filters - probably in this format to map to Dropdown objects easily
+  // const filters =[
+  //   {
+  //     title: "category",
+  //     options: ["option1", "option2"]
+  //   }
+  // ]
 
   return (
-    <div className="shop">
+    <div>
       <Navbar location="shop"/>
-      <div className="content">
+      <div className="shop">
         <div className="product-filter">
-          <h1>Filters</h1>
+          <h1 className="filter-title">Filters</h1>
           <div className="rule" />
+          <Dropdown title="category" options={Array(5).fill("testing")}/>
+          <Dropdown title="category" options={Array(5).fill("testing")}/>
+          <Dropdown title="category" options={Array(5).fill("testing")}/>
         </div>
-        <div>
+        <div style={{marginLeft: "25vw"}}>
           <div className="product-header">
             <h1>{products.length} Results</h1>
             <div style={{display: "flex", flexDirection: "row", alignItems: "center"}}>

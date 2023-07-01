@@ -11,8 +11,8 @@ function Preview(props: {product: Product}) {
       {props.product.popularItem ? <div className="best-seller-tag"><p>Best Seller</p></div> : <></>}
       <img src={cartIcon} alt="add to cart button" className="cart-icon"/>
 
-      {/* realtive elements */}
-      <img src={productImg} alt="can of planter's peanuts" style={{height: "60%", marginTop: "5%", alignSelf: "center"}}/>
+      {/* relative elements */}
+      <img src={productImg} alt="can of planter's peanuts" className="preview-image"/>
       <div style={{height: "30%", overflow: "hidden"}}>
         <h1>{props.product.name}</h1>
         <p>${props.product.price.toFixed(2)}</p>

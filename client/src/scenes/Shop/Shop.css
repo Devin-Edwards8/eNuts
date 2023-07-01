@@ -1,22 +1,21 @@
 .shop {
-    min-height: 100vh;
-    width: 100vw;
-}
-
-.shop .content {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    min-height: 90vh;
+    margin-top: 10vh;
 }
 
 .product-filter {
+    position: fixed;
+    left: 0;
+    top: 10vh;
     width: 23vw;
-    min-height: 90vh;
-    height: 100%;
+    height: 90vh;
     padding: 1vw;
 }
 
-.product-filter h1 {
+.product-filter .filter-title {
     font-size: 1.3rem;
     margin: 1rem 0 .5rem 0;
 }

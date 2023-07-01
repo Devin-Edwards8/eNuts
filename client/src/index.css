@@ -10,12 +10,20 @@
   */
 
   /* dark brown scheme */
-  --background-color: #faf4f0;
+  /* --background-color: #faf4f0;
   --primary-color: #744b2a;
   --secondary-color: #ffffff;
   --accent-color: #613f23;
   --text-color: #25180e;
-  --inverted-text-color: #faf4f0;
+  --inverted-text-color: #faf4f0; */
+
+  /* self-made brown scheme */
+  --background-color: #ffffff;
+  --primary-color: #A46B35;
+  --secondary-color: #ECD2B8;
+  --accent-color: #3D2102;
+  --text-color: #000000;
+  --inverted-text-color: #ffffff;
 
   font-family: 'Lato', sans-serif;
 
