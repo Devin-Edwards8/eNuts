@@ -9,9 +9,20 @@
     justify-content: center;
 }
 
-.promotion-bar p {
-    font-size: 1.3rem;
-    margin: 0;
-    width: 33vw;
-    text-align: center;
+.promotion-bar .promotion {
+    width: 40vw;
+    display: block;
+    /* should probably trigger animation on event instead */
+    /* animation: slide 5s cubic-bezier(0, 1, 1, 0); */
 }
+
+.promotion-bar p {
+    text-align: center;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+/* @keyframes slide {
+    from {left: 5vw}
+    to {left: -5vw}
+} */

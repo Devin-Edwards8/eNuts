@@ -21,9 +21,9 @@
 .navbar {
     display: flex;
     flex-direction: row;
-    width: 50vw;
+    width: 40vw;
     height: 100%;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -51,4 +51,17 @@
     text-decoration: underline;
     text-underline-offset: .25rem;
     text-decoration-color: var(--secondary-color);
+}
+
+.navbar .icons {
+    display: flex;
+    flex-direction: row;
+    width: 5rem;
+    justify-content: space-between;
+}
+
+.navbar img {
+    height: 2rem;
+    width: auto;
+    cursor: pointer;
 }

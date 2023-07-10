@@ -1,5 +1,7 @@
 import "./Navbar.css"
 import { Link } from "react-router-dom";
+import cartIcon from "../../assets/empty-cart-icon.png"
+import accountIcon from "../../assets/account-icon.png"
 
 function Navbar(props: {location: string}) {
   const paths = getPaths(props.location)
@@ -11,7 +13,10 @@ function Navbar(props: {location: string}) {
         <Link to={paths.shopPath}>Shop</Link>
         <Link to={paths.mapPath}>Locations</Link>
         <Link to={paths.aboutPath}>About Us</Link>
-        <p>Account</p>
+        <div className="icons">
+          <img src={cartIcon} alt="view cart button"/>
+          <img src={accountIcon} alt="view account information button"/>
+        </div>
       </nav>
     </div>
   );
