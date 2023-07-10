@@ -33,4 +33,44 @@
 
 .about .story p {
     font-size: 1.2rem;
+    line-height: 1.8rem;
+}
+
+.about .story a {
+    color: var(--accent-color);
+}
+
+.about .story .emphasis {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.about dialog {
+    width: 40vw;
+    border: var(--accent-color) 1px solid;
+    text-align: left;
+}
+
+.about dialog::backdrop {
+    backdrop-filter: blur(.2rem);
+}
+
+.about dialog h1 {
+    color: var(--accent-color);
+}
+
+.about dialog input {
+    margin: 1rem auto 0 auto;
+    height: 2rem;
+    width: 100%;
+    font-size: 1.3rem;
+    font-family: 'Lato', sans-serif;
+}
+
+.about dialog textarea {
+    margin: 1rem auto;
+    width: 100%;
+    font-size: 1.3rem;
+    font-family: 'Lato', sans-serif;
 }
