@@ -13,11 +13,13 @@
 .about img {
     width: 45vw;
     height: auto;
-    margin: 5%;
+    max-height: 80vh;
+    margin: 5vh 5vw;
     flex-shrink: 1;
 }
 
 .about .story {
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 3vh;
@@ -37,6 +39,11 @@
 }
 
 .about .story a {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+}
+
+.about .story .story-link {
     color: var(--accent-color);
 }
 
@@ -54,6 +61,37 @@
 
 .about dialog::backdrop {
     backdrop-filter: blur(.2rem);
+} 
+
+.hidden {
+    visibility: hidden;
+}
+
+.message-sent {
+    background-color: var(--secondary-color);
+    border: 1px solid var(--accent-color);
+    padding: .5rem .7rem .5rem 1rem;
+    border-radius: .3rem;;
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.message-sent-text {
+    font-size: 1.1rem;
+    font-family: 'Lato', sans-serif;
+    color: var(--accent-color);
+    margin: 0 auto;
+}
+
+.close-message-sent {
+    font-size: .8rem;
+    margin: 0 auto;
+    cursor: pointer;
+    color: var(--primary-color)
 }
 
 .about dialog h1 {

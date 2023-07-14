@@ -8,6 +8,7 @@ function ErrorElement() {
   const errorMessage = useRouteError();
   const listener = (): void => {
     window.alert("here's the error we received:\n\n" + errorMessage)
+    console.log(errorMessage);
   }
 
   return (
