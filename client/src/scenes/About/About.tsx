@@ -4,23 +4,53 @@ import "./About.css"
 import trees from "../../assets/pistachio-trees.png"
 import { useRef, useState } from "react";
 
+class TimeoutPromise extends Promise<void> {
+  timeoutId?: ReturnType<typeof setTimeout>;
+  clear =  () => this.timeoutId == null ? window.alert("no timeout id") : clearTimeout(this.timeoutId);
+
+  setTimeoutId = (timeoutId: ReturnType<typeof setTimeout>) => {
+    this.timeoutId = timeoutId;
+  }
+
+  constructor(ex: (res: () => void) => void) {
+    super(ex);
+  }
+}
+
 function About() {
   const messageBox = useRef<HTMLDialogElement>(null);
   const form = useRef<HTMLFormElement>(null);
   const [messageSent, showMessageSent] = useState(false);
+  const [timeoutPromise, setTimeoutPromise] = useState<TimeoutPromise>();
   const openMessage = () => {
     messageBox.current !== null ? messageBox.current.showModal() : window.alert("An unexpected error has occurred.\nTry contacting us at our email: wehavenoemail@fakeemail.com");
   }
   const closeMessage = () => {
     messageBox.current?.close();
   }
+  const closeMessageSent = () => {
+    showMessageSent(false);
+    timeoutPromise?.clear();
+  }
+  const sleep = (ms: number): TimeoutPromise => {
+    let timeoutId: NodeJS.Timeout | null = null;
+
+    const promise = new TimeoutPromise((resolve) => {
+      timeoutId = setTimeout(() => resolve(), ms);
+    });
+
+    if(timeoutId !== null ) promise.setTimeoutId(timeoutId);
+    setTimeoutPromise(promise);
+  
+    return promise;
+  }
+
   const submitMessage = async() => {
-    // form.current?.submit();
-    // form.current?.reset();
+    
     messageBox.current?.close();
     showMessageSent(true);
-    // TODO: add timeout id so that it can be cancelled when exited
-    await new Promise(r => setTimeout(r, 4000))
+    
+    await sleep(3000)
       .then(() => showMessageSent(false))
       .catch(e => window.alert(e))
   }
@@ -54,17 +84,13 @@ function About() {
       </div>
       <div className={"message-sent" + (messageSent ? "" : " hidden")}>
         <p className="message-sent-text">message sent</p>
-        <p className="close-message-sent" onClick={() => showMessageSent(false)}>x</p>
+        <p className="close-message-sent" onClick={() => closeMessageSent()}>x</p>
       </div>
     </div>
   );
 }
 
 export default About;
-
-// interface TimeoutFunction {
-//   (): number
-// }
 
 const story =
   <div>
