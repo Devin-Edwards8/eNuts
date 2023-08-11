@@ -58,10 +58,73 @@
     flex-direction: row;
     width: 5rem;
     justify-content: space-between;
+    position: relative;
 }
 
 .navbar img {
     height: 2rem;
     width: auto;
     cursor: pointer;
+}
+
+.navbar .cart-number {
+    min-width: .7rem;
+    height: .7rem;
+    font-size: .7rem;
+    line-height: .7rem;
+    border-radius: .4rem;
+    text-align: center;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    position: absolute;
+    left: .4rem;
+    top: .4rem;
+    padding: .1rem;
+}
+
+.login-popup {
+    width: 10rem;
+    height: 2rem;
+    position: absolute;
+    top: 2.2rem;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--secondary-color);
+    border-radius: .2rem;
+    cursor: pointer;
+}
+
+.login-popup span {
+    margin: 0 .4rem;
+    font-size: 1rem;
+}
+
+.login-popup .login-text:hover {
+    text-decoration: solid underline;
+}
+
+.cart-popup {
+    width: 20rem;
+    position: absolute;
+    top: 2.2rem;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content:center;
+    background-color: var(--secondary-color);
+    border-radius: .2rem;
+}
+
+.cart-popup .empty-cart-message{
+    font-size: 1.1rem;
+    margin: 2rem;
+}
+
+.cart-popup .rule {
+    width: 95%;
+    border-bottom: solid 1px var(--primary-color);
+    margin: 1rem;
 }
