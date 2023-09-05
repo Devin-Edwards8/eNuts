@@ -1,0 +1,23 @@
+#map-title {
+    margin: 10vh 0 3vh 1rem;
+    color: var(--text-color);
+}
+
+#map-area {
+    display: flex;
+    flex-direction: row;
+    width: 98vw;
+    height: 78vh;
+    margin-left: 1vw;
+
+    .search-area {
+        border: 1px solid var(--secondary-color);
+        width: 25%;
+        height: 100%;
+    }
+
+    .google-map {
+        border: 1px solid var(--secondary-color);
+        border-left: none;
+    }
+}
