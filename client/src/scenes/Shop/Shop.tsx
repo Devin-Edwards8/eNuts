@@ -29,7 +29,7 @@ function Shop() {
   // ]
 
   return (
-    <div>
+    <div style={{width: "100%"}}>
       <Navbar location="shop"/>
       <div className="shop">
         <div className="product-filter">
@@ -39,7 +39,7 @@ function Shop() {
           <Dropdown title="category" options={Array(5).fill("testing")}/>
           <Dropdown title="category" options={Array(5).fill("testing")}/>
         </div>
-        <div>
+        <div style={{width: "100%"}}>
           <div className="product-header">
             <h1>{products.length} Results</h1>
             <div style={{display: "flex", flexDirection: "row", alignItems: "center"}}>

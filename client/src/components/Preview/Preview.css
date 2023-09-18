@@ -64,18 +64,18 @@
 
 @media only screen and (min-width: 576px) {
     .preview {
-        width: calc(48vw - 0.2rem);
+        width: calc(48% - 0.2rem);
     }
 }
 
 @media only screen and (min-width: 768px) {
     .preview {
-        width: calc(71vw / 2 - 0.2rem);
+        width: calc(47.4% - 0.2rem);
     }
 }
 
 @media only screen and (min-width: 1200px) {
     .preview {
-        width: calc(23vw - 0.2rem);
+        width: calc(30.5% - 0.2rem);
     }
 }

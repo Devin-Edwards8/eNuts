@@ -4,6 +4,7 @@
     justify-content: space-evenly;
     min-height: 90vh;
     margin-top: 10vh;
+    width: 100%;
 }
 
 .product-filter {
@@ -11,7 +12,7 @@
     position: fixed;
     left: 0;
     top: 10vh;
-    width: 23vw;
+    width: 23%;
     height: 90vh;
     padding: 1vw;
 }
@@ -27,7 +28,9 @@
 }
 
 .product-header {
-    width: 75vw;
+    width: 96%;
+    margin-left: 2%;
+    align-self: center;
     height: calc(3rem + 1vw - .5rem);
     padding-bottom: .5rem;
     display: flex;
@@ -49,7 +52,7 @@
 
 .product-container {
     display: flex;
-    width: 98vw;
+    width: 98%;
     flex-direction: row;
     flex-wrap: wrap;
 }
@@ -62,8 +65,8 @@
 
 @media only screen and (min-width: 768px) {
     .product-container, .product-header {
-        width: 75vw;
-        margin-left: 25vw;
+        width: 75%;
+        margin-left: 25%;
     }
     .product-filter {
         display: block;
