@@ -11,7 +11,7 @@
     margin-left: 1vw;
 
     .search-area {
-        border: 1px solid var(--secondary-color);
+        border: var(--secondary-color) 0.1rem solid;
         width: 25%;
         height: 100%;
     }

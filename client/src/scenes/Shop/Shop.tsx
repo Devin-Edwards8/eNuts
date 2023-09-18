@@ -39,7 +39,7 @@ function Shop() {
           <Dropdown title="category" options={Array(5).fill("testing")}/>
           <Dropdown title="category" options={Array(5).fill("testing")}/>
         </div>
-        <div style={{marginLeft: "25vw"}}>
+        <div>
           <div className="product-header">
             <h1>{products.length} Results</h1>
             <div style={{display: "flex", flexDirection: "row", alignItems: "center"}}>

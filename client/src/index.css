@@ -1,23 +1,5 @@
 :root {
-  /* muted purple scheme */
-  /*
-  --background-color: #fafafa;
-  --primary-color: #c2bbc3;
-  --secondary-color: #e9e7e8;
-  --accent-color: #c3bbc0;
-  --text-color: #0d0c0e;
-  --inverted-text-color: #0d0c0e;
-  */
-
-  /* dark brown scheme */
-  /* --background-color: #faf4f0;
-  --primary-color: #744b2a;
-  --secondary-color: #ffffff;
-  --accent-color: #613f23;
-  --text-color: #25180e;
-  --inverted-text-color: #faf4f0; */
-
-  /* self-made brown scheme */
+  /* color scheme */
   --background-color: #ffffff;
   --primary-color: #A46B35;
   --secondary-color: #ECD2B8;
@@ -42,13 +24,14 @@
   color: var(--text-color);
 }
 
-body {
+body, html {
   background-color: var(--background-color);
   margin: 0;
   display: flex;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  /* scrollbar-gutter: stable; */
 }
 
 p {
