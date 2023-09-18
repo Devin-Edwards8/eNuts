@@ -4,9 +4,9 @@
     top: 0;
     display: flex;
     flex-direction: row;
-    width: 95vw;
-    padding-left: 2.5vw;
-    padding-right: 2.5vw;
+    width: 95%;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
     box-shadow: 0 2px 3px -3px var(--primary-color);
     height: 10vh;
     justify-content: space-between;
@@ -30,7 +30,7 @@
 .navbar {
     display: none;
     flex-direction: column;
-    width: 100vw;
+    width: 100%;
     position: absolute;
     left: 0;
     top: 10vh;

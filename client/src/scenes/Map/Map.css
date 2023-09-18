@@ -1,3 +1,7 @@
+.map {
+    width: 100%;
+}
+
 #map-title {
     margin: 10vh 0 3vh 1rem;
     color: var(--text-color);
@@ -6,18 +10,51 @@
 #map-area {
     display: flex;
     flex-direction: row;
-    width: 98vw;
-    height: 78vh;
+    width: 98%;
+    min-height: 77vh;
     margin-left: 1vw;
 
     .search-area {
-        border: var(--secondary-color) 0.1rem solid;
-        width: 25%;
+        background-color: #FAF9F6;
+        padding: 2%;
+        width: 100%;
+        min-height: 77vh;
         height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1vh;
     }
 
     .google-map {
         border: 1px solid var(--secondary-color);
         border-left: none;
+        visibility: hidden;
+        position: absolute;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    #map-area .search-area {
+        width: 25%;
+    }
+
+    #map-area .google-map {
+        visibility: visible;
+        width: 70%;
+        height: 77vh;
+        margin-left: 28%;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    #map-area .search-area {
+        padding: 0.5%;
+    }
+    #map-area .google-map {
+        visibility: visible;
+        width: 73%;
+        height: 78.5vh;
+        margin-left: 25.5%;
     }
 }

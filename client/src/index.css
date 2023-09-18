@@ -24,14 +24,14 @@
   color: var(--text-color);
 }
 
-body, html {
+body, html, #root {
   background-color: var(--background-color);
   margin: 0;
   display: flex;
-  place-items: center;
+  width: 100%;
   min-width: 320px;
+  place-items: center;
   min-height: 100vh;
-  /* scrollbar-gutter: stable; */
 }
 
 p {
