@@ -35,7 +35,7 @@ function Map() {
       <h1 id="map-title">Find A Store</h1>
       <div id="map-area">
         <div className="search-area">
-          {locations.map(e => <Store locationInfo={e} setMap={setActiveMap} setMapVisibility={setMapVisibility}/>)}
+          {locations.map((e, i) => <Store key={i} locationInfo={e} setMap={setActiveMap} setMapVisibility={setMapVisibility}/>)}
         </div>
         <EmbeddedMap source={activeMap + key} invisibleMap={mapVisibility} setMapVisibility={setMapVisibility}/> 
       </div>
