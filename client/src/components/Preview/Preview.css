@@ -40,12 +40,12 @@
 }
 
 .cart-icon {
-    width: 5rem;
-    aspect-ratio: 1 / 1;
+    width: 3rem;
+    height: auto;
     position: absolute;
-    top: 0;
-    right: 0;
-    cursor: crosshair;
+    top: 1rem;
+    right: 1rem;
+    cursor: auto; 
 }
 
 .best-seller-tag {

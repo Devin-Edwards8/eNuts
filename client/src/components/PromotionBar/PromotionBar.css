@@ -9,20 +9,33 @@
     justify-content: center;
 }
 
-.promotion-bar .promotion {
-    width: 40vw;
-    display: block;
-    /* should probably trigger animation on event instead */
-    /* animation: slide 5s cubic-bezier(0, 1, 1, 0); */
+#promotion-container {
+    height: 5vh;
+    width: 46%;
+    height: 100%;
+    max-width: 46%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
 }
 
-.promotion-bar p {
+#promotion-text {
+    margin: 0;
+    font-size: 1.1rem;
     text-align: center;
-    font-size: 1.3rem;
+}
+
+#right-promotion-arrow, #left-promotion-arrow {
+    position: absolute;
     cursor: pointer;
 }
 
-/* @keyframes slide {
-    from {left: 5vw}
-    to {left: -5vw}
-} */
+#right-promotion-arrow {
+    right: 25%;
+}
+
+#left-promotion-arrow {
+    left: 25%;
+}

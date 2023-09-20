@@ -6,7 +6,7 @@ import cartIcon from "../../assets/cart-icon.png";
 
 function Preview(props: {product: Product}) {
   return ( 
-    <div className="preview">
+    <div className="preview" onClick={() => console.log("add product clicking")}>
       {/* absolutely positioned elements */}
       {props.product.popularItem ? <div className="best-seller-tag"><p>Best Seller</p></div> : <></>}
       <img src={cartIcon} alt="add to cart button" className="cart-icon"/>
