@@ -1,15 +1,18 @@
 import "./preview.css"
 import { Rating } from "react-simple-star-rating";
+import { Link } from "react-router-dom";
 import colorScheme from "../../colors";
 import productImg from "../../assets/sample-product.png";
 import cartIcon from "../../assets/cart-icon.png";
+import { ProductContract } from "../../types";
 
-function Preview(props: {product: Product}) {
+function Preview(props: {product: ProductContract}) {
   return ( 
-    <div className="preview" onClick={() => console.log("add product clicking")}>
+    <Link to={props.product._id.toString()} className="preview">
       {/* absolutely positioned elements */}
       {props.product.popularItem ? <div className="best-seller-tag"><p>Best Seller</p></div> : <></>}
-      <img src={cartIcon} alt="add to cart button" className="cart-icon"/>
+      <img src={cartIcon} alt="add to cart button" className="cart-icon" 
+        onClick={e => e.preventDefault()}/>
 
       {/* relative elements */}
       <img src={productImg} alt="can of planter's peanuts" className="preview-image"/>
@@ -23,7 +26,7 @@ function Preview(props: {product: Product}) {
           <p>(90)</p>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
 

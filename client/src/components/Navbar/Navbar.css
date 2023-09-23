@@ -58,6 +58,7 @@
     flex-direction: row;
     width: 5rem;
     justify-content: space-between;
+    position: relative;
 }
 
 .navbar img {
@@ -165,9 +166,8 @@
     
     .navbar a:hover {
         background-color: var(--background-color);
-        text-decoration: underline;
-        text-underline-offset: .25rem;
-        text-decoration-color: var(--secondary-color);
+        transition: 0.5s;
+        color: var(--primary-color);
     }
     
     .navbar .icons {
