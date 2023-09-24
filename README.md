@@ -1,8 +1,6 @@
 # eNuts
-![eNuts Homepage](./images/Screenshot%202023-09-24%20at%201.20.52%20PM.png)
 An online shop for delicious nuts.
-
-
+![eNuts Homepage](./images/Screenshot%202023-09-24%20at%201.20.52%20PM.png)
 
 ## Overview
 This is my first full-stack project, using MongoDB, React, Express and Node. I chose a mock eCommerce company selling one of my favorite foods: nuts.
