@@ -1,13 +1,13 @@
 import "./Shop.css"
 import Preview from "../../components/Preview/Preview";
+import { ProductContract } from "../../types";
 import Dropdown from "../../components/Dropdown/Dropdown";
 import Navbar from "../../components/Navbar/Navbar";
 // import Select from "react-select";
 import { useLoaderData } from "react-router-dom";
 
 function Shop() {
-  const products = useLoaderData() as Product[]; 
-
+  const products = useLoaderData() as ProductContract[]; 
   // TODO: add selection to toggle results per page
   // const itemsPerPage = [
   //   { value: 12, label: "12" },
@@ -21,12 +21,20 @@ function Shop() {
   // }
 
   // TODO: figure out how to fill out filters - probably in this format to map to Dropdown objects easily
-  // const filters =[
-  //   {
-  //     title: "category",
-  //     options: ["option1", "option2"]
-  //   }
-  // ]
+  const filters =[
+    {
+      title: "Nut Type",
+      options: ["Peanuts", "Almonds", "Cashews", "Pistachios", "Legumes"]
+    },
+    {
+      title: "Price",
+      options: ["Under $5", "$5-$10", "$10-$20", "Over $20"]
+    },
+    {
+      title: "Rating",
+      options: ["1-3 Stars", "4 Stars", "5 Stars"]
+    },
+  ]
 
   return (
     <div style={{width: "100%"}}>
@@ -35,9 +43,7 @@ function Shop() {
         <div className="product-filter">
           <h1 className="filter-title">Filters</h1>
           <div className="rule" />
-          <Dropdown title="category" options={Array(5).fill("testing")}/>
-          <Dropdown title="category" options={Array(5).fill("testing")}/>
-          <Dropdown title="category" options={Array(5).fill("testing")}/>
+          {filters.map(e => <Dropdown title={e.title} options={e.options}/>)}
         </div>
         <div style={{width: "100%"}}>
           <div className="product-header">
@@ -47,7 +53,7 @@ function Shop() {
             </div>
           </div>
           <div className="product-container">
-            {products.map((product: Product) => 
+            {products.map((product: ProductContract) => 
               <Preview product={product}/>)}
           </div>
         </div>

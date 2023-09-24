@@ -13,7 +13,7 @@ function Navbar(props: { location: string }) {
     "hidden"
   );
   const [navbar, showNav] = useState<"flex" | "">("");
-  const cartNum = 0;
+  const cartNum = 0; // change this to update cart icon
   let cartNumDisplayed = "";
   let cartNumVisibility: "visible" | "hidden" = "hidden";
   if (cartNum == 0) {
@@ -103,8 +103,7 @@ const getPaths = (location: string): Paths => {
     (aboutPath = "../about");
     break;
   default:
-    (shopPath = ""), (mapPath = ""), (aboutPath = "");
-    console.log("unexpected path passed to navbar");
+    (shopPath = "../shop"), (mapPath = "../locations"), (aboutPath = "../about");
     break;
   }
 

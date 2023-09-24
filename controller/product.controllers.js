@@ -18,6 +18,20 @@ productController.get('/products', (req, res) => {
     });
 });
 /**
+ * GET/
+ * retrieve and display a single product
+ */
+productController.get('/product', (req, res) => {
+  Product
+    .findOne({_id: req.query.productId})
+    .then((data) => {
+      res.status(200).send(data);
+    })
+    .catch((err) => {
+      res.status(400).send('unable to fetch product\n'+ err);
+    });
+});
+/**
  * POST/
  * Add a new product to your database
  */
