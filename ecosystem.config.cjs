@@ -16,7 +16,7 @@ module.exports = {
     production: {
       user: 'ubuntu',
       host: 'ec2-3-140-151-153.us-east-2.compute.amazonaws.com',
-      key: '~/.ssh/devKey.pem',
+      key: 'deploy.key',
       ref: 'origin/main',
       repo: 'https://github.com/Devin-Edwards8/eNuts.git',
       path: '/home/ubuntu/eNuts',
