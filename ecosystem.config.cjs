@@ -15,8 +15,8 @@ module.exports = {
       key: '~/.ssh/devKey.pem',
       ref: 'origin/main',
       repo: 'https://github.com/Devin-Edwards8/eNuts.git',
-      path: '/home/ubuntu/eNuts/current',
-      'post-deploy': 'npm install && pm2 startOrRestart ecosystem.config.cjs && pm2 save'
+      path: '/home/ubuntu/eNuts',
+      'post-deploy': 'cd eNuts/current && npm install && pm2 startOrRestart ecosystem.config.cjs && pm2 save'
     }
   }
 }
