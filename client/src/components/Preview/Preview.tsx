@@ -1,4 +1,4 @@
-import "./preview.css"
+import "./Preview.css"
 import { Rating } from "react-simple-star-rating";
 import { Link } from "react-router-dom";
 import colorScheme from "../../colors";
