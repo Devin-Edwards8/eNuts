@@ -16,7 +16,7 @@ module.exports = {
       ref: 'origin/main',
       repo: 'https://github.com/Devin-Edwards8/eNuts.git',
       path: '/home/ubuntu/eNuts',
-      'post-deploy': 'npm install && cd client && npm install && npm run build && pm2 restart ecosystem.config.cjs && pm2 save'
+      'post-deploy': 'npm install && cd client && npm install && npm run build && cd .. && pm2 restart ecosystem.config.cjs && pm2 save'
     }
   }
 }
