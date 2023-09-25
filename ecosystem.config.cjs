@@ -6,7 +6,11 @@ module.exports = {
   },
   {
     name: 'server',
-    script: 'npm start'
+    script: 'npm start',
+    env: {
+      PORT: 8080,
+      ATLAS_URI: "mongodb+srv://enutsadmin:R1x5NRMcpW5l5ujb@cluster0.cpim715.mongodb.net/?retryWrites=true&w=majority"
+    }
   }],
   deploy: {
     production: {
