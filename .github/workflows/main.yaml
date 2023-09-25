@@ -1,0 +1,30 @@
+name: CI - Master
+  on:
+    push:
+      branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up SSH
+        run: |
+          mkdir -p ~/.ssh/
+          echo "$SSH_PRIVATE_KEY" > ./deploy.key
+          sudo chmod 600 ./deploy.key
+        shell: bash
+        env:
+          SSH_PRIVATE_KEY: ${{secrets.SSH_PRIVATE_KEY}}
+
+      - name: Create env file
+        run: |
+          touch .env
+          echo ATLAS_URI=${{ variable.ATLAS_URI }} >> .env
+          echo PORT=${{ variable.PORT }} >> .env
+          echo MAPS_KEY=${{ secrets.MAPS_KEY }} >> .env
+
+      - name: Deploy
+        run: |
+          pm2 deploy ecosystem.config.cjs setup
+          pm2 deploy ecosystem.config.cjs
