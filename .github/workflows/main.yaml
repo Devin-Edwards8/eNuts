@@ -24,6 +24,9 @@ jobs:
           echo PORT=${{ vars.PORT }} >> .env
           echo MAPS_KEY=${{ secrets.MAPS_KEY }} >> .env
 
+      - name: Install PM2
+        run: npm i pm2
+
       - name: Deploy
         run: |
           pm2 deploy ecosystem.config.cjs setup
