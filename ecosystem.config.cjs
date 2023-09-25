@@ -8,8 +8,8 @@ module.exports = {
     name: 'server',
     script: 'npm start',
     env: {
-      PORT: 8080,
-      ATLAS_URI: "mongodb+srv://enutsadmin:R1x5NRMcpW5l5ujb@cluster0.cpim715.mongodb.net/?retryWrites=true&w=majority"
+      PORT: process.env.PORT,
+      ATLAS_URI: process.env.ATLAS_URI
     }
   }],
   deploy: {
