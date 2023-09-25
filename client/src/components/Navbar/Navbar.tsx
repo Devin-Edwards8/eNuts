@@ -9,9 +9,9 @@ function Navbar(props: { location: string }) {
   const paths = getPaths(props.location);
   const [cartPopup, setCartPopup] = useState<"none" | "block">("none");
   const [loginPopup, setLoginPopup] = useState<"none" | "block">("none");
-  const [accountPopup, setAccountPopup] = useState<"hidden" | "visible">(
-    "hidden"
-  );
+  // const [accountPopup, setAccountPopup] = useState<"hidden" | "visible">(
+  //   "hidden"
+  // );
   const [navbar, showNav] = useState<"flex" | "">("");
   const cartNum = 0; // change this to update cart icon
   let cartNumDisplayed = "";

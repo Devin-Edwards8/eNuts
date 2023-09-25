@@ -27,14 +27,6 @@ The website also shows "locations" of our nut stores.
 ## Future Development
 As I work, I continue to find new, exciting features I want to add.
 
-### Live Demo
-Objective:
-- allow website to be viewed by anyone
-
-Learning Outcomes:
-- host first backend site with AWS
-- learn about network / infrastructure for web hosting
-
 ### Users
 Objectives:
 - save user information from session to session

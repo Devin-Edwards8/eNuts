@@ -2,7 +2,7 @@ import "./preview.css"
 import { Rating } from "react-simple-star-rating";
 import { Link } from "react-router-dom";
 import colorScheme from "../../colors";
-import productImg from "../../assets/sample-product.png";
+import productImg from "../../assets/sample-products/sample-product.png";
 import cartIcon from "../../assets/cart-icon.png";
 import { ProductContract } from "../../types";
 
