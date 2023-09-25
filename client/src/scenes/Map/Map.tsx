@@ -7,7 +7,7 @@ import "./Map.css";
 function Map() {
   const [activeMap, setActiveMap] = useState("https://www.google.com/maps/embed/v1/place?q=place_id:ChIJJURYKcqIOIgRyO51Iut3g7E&key=");
   const [mapVisibility, setMapVisibility] = useState(1);
-  const key = "AIzaSyBTF6K9I4h2Vx7xPiC2q_hhsIHOcyRClPc";
+  const key = process.env.MAPS_KEY;
   const locations = [
     {
       name: "Krema Nut Company",
