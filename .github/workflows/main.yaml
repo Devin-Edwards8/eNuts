@@ -1,4 +1,4 @@
-name: CI - Master
+name: CI - Main
 on:
   push:
     branches: [ main ]
@@ -29,5 +29,5 @@ jobs:
 
       - name: Deploy
         run: |
-          pm2 deploy ecosystem.config.cjs production setup
-          pm2 deploy ecosystem.config.cjs production
+          env $(cat .env | grep -v \"#\" | xargs) pm2 deploy ecosystem.config.cjs production setup
+          env $(cat .env | grep -v \"#\" | xargs) pm2 deploy ecosystem.config.cjs production
