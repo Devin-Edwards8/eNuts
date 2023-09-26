@@ -5,6 +5,8 @@ import cors from 'cors';
 import { userController, productController } from './controller/index.js';
 import './load.environment.js';
 
+const d = new Date();
+
 const atlasUri = process.env.ATLAS_URI || "";
 
 const PORT = process.env.PORT || 8080;
@@ -19,6 +21,7 @@ app.use('/', userController);
 app.use('/', productController);
 
 app.listen(PORT, () => {
+  console.log(`${d.getMonth()}/${d.getDate()}/${d.getFullYear()} ${d.getHours()%12}:${String(d.getMinutes()).padStart(2, '0')}:${d.getSeconds()}`)
   console.log('Server is running on port 8080');
   mongoose.connect(atlasUri).then(() => {
     console.log('Connected to mongodb at port 27017');
