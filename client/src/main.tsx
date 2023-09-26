@@ -21,7 +21,7 @@ const router = createBrowserRouter([
     element: <Shop />,
 
     loader: async (): Promise<ProductContract[]> => {
-      return fetch("http://localhost:8080/products")
+      return fetch("http://3.140.151.153:8080/products")
         .then(res => res.json())
     },
 
@@ -32,7 +32,7 @@ const router = createBrowserRouter([
     element: <Product />,
 
     loader: async ({params}): Promise<ProductContract> => {
-      return fetch(`http://localhost:8080/product?productId=${params.productId}`)
+      return fetch(`http://3.140.151.153:8080/product?productId=${params.productId}`)
         .then(res => res.json())
     },
 
