@@ -24,7 +24,6 @@ jobs:
           touch .env
           echo ATLAS_URI=${{ vars.ATLAS_URI }} >> .env
           echo PORT=${{ vars.PORT }} >> .env
-          echo MAPS_KEY=${{ secrets.MAPS_KEY }} >> .env
 
       - name: Install PM2
         run: npm i -g pm2
