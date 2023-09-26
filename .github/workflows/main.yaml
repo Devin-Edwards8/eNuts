@@ -31,6 +31,5 @@ jobs:
 
       - name: Deploy
         run: |
-          rm -rf eNuts
           env $(cat .env | grep -v \"#\" | xargs) pm2 deploy ecosystem.config.cjs production setup
           env $(cat .env | grep -v \"#\" | xargs) pm2 deploy ecosystem.config.cjs production
