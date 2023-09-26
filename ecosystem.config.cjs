@@ -2,10 +2,7 @@ module.exports = {
   apps: [{
     name: 'client',
     script: 'serve dist',
-    cwd: '/client/',
-    env: {
-      
-    }
+    cwd: '/client/'
   },
   {
     name: 'server',
