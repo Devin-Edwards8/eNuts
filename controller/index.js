@@ -3,5 +3,5 @@ import productController from './product.controllers.js';
 
 export {
   userController,
-  productController,
+  productController
 };

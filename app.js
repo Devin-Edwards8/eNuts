@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 app.use(cors())
 
 app.use('/', userController);
-app.use('/', productController)
+app.use('/', productController);
 
 app.listen(PORT, () => {
   console.log('Server is running on port 8080');

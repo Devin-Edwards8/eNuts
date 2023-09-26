@@ -32,7 +32,6 @@ const router = createBrowserRouter([
     element: <Product />,
 
     loader: async ({params}): Promise<ProductContract> => {
-      console.log(`http://localhost:8080/product?productId=${params.productId}`)
       return fetch(`http://localhost:8080/product?productId=${params.productId}`)
         .then(res => res.json())
     },

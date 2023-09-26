@@ -2,7 +2,10 @@ module.exports = {
   apps: [{
     name: 'client',
     script: 'serve dist',
-    cwd: '/client/'
+    cwd: '/client/',
+    env: {
+      
+    }
   },
   {
     name: 'server',
@@ -23,5 +26,6 @@ module.exports = {
       'pre-setup': 'rm -rf eNuts',
       'post-deploy': 'npm install && cd client && npm install && npm run build && cd .. && pm2 restart ecosystem.config.cjs && pm2 save'
     }
+
   }
 }
