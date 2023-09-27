@@ -7,7 +7,6 @@ import { useState } from "react";
 
 function Navbar(props: { location: string }) {
   const paths = getPaths(props.location);
-  const [cartPopup, setCartPopup] = useState<"none" | "block">("none");
   const [loginPopup, setLoginPopup] = useState<"none" | "block">("none");
   // const [accountPopup, setAccountPopup] = useState<"hidden" | "visible">(
   //   "hidden"
@@ -43,7 +42,7 @@ function Navbar(props: { location: string }) {
           <img
             src={cartIcon}
             alt="view cart button"
-            onClick={() => setCartPopup("block")}
+            onClick={() => console.log("cart clicked")}
           />
           <span
             className="cart-number"
@@ -63,13 +62,6 @@ function Navbar(props: { location: string }) {
         <div className="login-popup">
           <span className="login-text">log in / sign up</span>
           <span>→</span>
-        </div>
-      </div>
-      <div style={{ display: cartPopup }} className="screen-fill"
-        onClick={() => setCartPopup("none")}>
-        <div className="cart-popup">
-          <span className="empty-cart-message">Your cart is empty.</span>
-          <div className="rule" />
         </div>
       </div>
     </div>

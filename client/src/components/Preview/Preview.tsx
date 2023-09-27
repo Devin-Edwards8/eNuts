@@ -22,7 +22,7 @@ function Preview(props: {product: ProductContract}) {
         <div className="star-rating">
           <p>3.5</p>
           <Rating initialValue={3.5} allowFraction={true} disableFillHover={true} allowHover={false} fillColor={colorScheme.primaryColor} 
-            emptyColor={colorScheme.primaryColor} emptyStyle={{opacity: .4}} size={20}/>
+            emptyColor={colorScheme.primaryColor} emptyStyle={{opacity: .4}} size={20} readonly={true}/>
           <p>(90)</p>
         </div>
       </div>
