@@ -49,7 +49,12 @@ function Shop() {
           <div className="product-header">
             <h1>{products.length} Results</h1>
             <div style={{display: "flex", flexDirection: "row", alignItems: "center"}}>
-              <h2>Items Per Page</h2>
+              <label htmlFor="items">Items</label>
+              <select name="items" id="items-displayed">
+                <option value={6}>6</option>
+                <option value={12}>12</option>
+                <option value={18}>18</option>
+              </select>
             </div>
           </div>
           <div className="product-container">
