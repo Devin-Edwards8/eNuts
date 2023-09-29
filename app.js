@@ -17,8 +17,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cors())
 
-app.use('/', userController);
-app.use('/', productController);
+app.use('/server/', userController);
+app.use('/server/', productController);
 
 app.listen(PORT, () => {
   console.log(`${d.getMonth()}/${d.getDate()}/${d.getFullYear()} ${d.getHours()}:${String(d.getMinutes()).padStart(2, '0')}:${String(d.getSeconds()).padStart(2, '0')}`)
