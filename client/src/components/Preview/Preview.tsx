@@ -2,8 +2,8 @@ import "./Preview.css"
 import { Rating } from "react-simple-star-rating";
 import { Link } from "react-router-dom";
 import colorScheme from "../../colors";
-import cartIcon from "../../assets/cart-icon.png";
-import ProductImages from "./productImages.js";
+import cartIcon from "../../assets/add-to-cart-icon.png";
+import getImage from "../../productImages";
 import { ProductContract } from "../../types";
 
 function Preview(props: {product: ProductContract}) {
@@ -28,21 +28,6 @@ function Preview(props: {product: ProductContract}) {
       </div>
     </Link>
   );
-}
-
-function getImage(name: string) {
-  switch(name) {
-  case "almonds":
-    return ProductImages.almonds;
-  case "cashews":
-    return ProductImages.cashews;
-  case "pistachios":
-    return ProductImages.pistachios;
-  case "legumes":
-    return ProductImages.legumes;
-  default:
-    return ProductImages.peanuts;
-  }
 }
 
 export default Preview;
