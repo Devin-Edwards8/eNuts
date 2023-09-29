@@ -21,7 +21,7 @@ const router = createBrowserRouter([
     element: <Shop />,
 
     loader: async (): Promise<ProductContract[]> => {
-      return fetch("https://3.140.151.153/server/products")
+      return fetch("https://enuts.devinedwards.xyz/server/products")
         .then(res => res.json())
     },
 
@@ -32,7 +32,7 @@ const router = createBrowserRouter([
     element: <Product />,
 
     loader: async ({params}): Promise<ProductContract> => {
-      return fetch(`https://3.140.151.153/server/product?productId=${params.productId}`)
+      return fetch(`https://enuts.devinedwards.xyz/server/product?productId=${params.productId}`)
         .then(res => res.json())
     },
 
