@@ -2,8 +2,8 @@ import "./Preview.css"
 import { Rating } from "react-simple-star-rating";
 import { Link } from "react-router-dom";
 import colorScheme from "../../colors";
-import productImg from "../../assets/sample-products/sample-product.png";
 import cartIcon from "../../assets/cart-icon.png";
+import ProductImages from "./productImages.js";
 import { ProductContract } from "../../types";
 
 function Preview(props: {product: ProductContract}) {
@@ -15,7 +15,7 @@ function Preview(props: {product: ProductContract}) {
         onClick={e => e.preventDefault()}/>
 
       {/* relative elements */}
-      <img src={productImg} alt="can of planter's peanuts" className="preview-image"/>
+      <img src={getImage(props.product.name)} alt="can of planter's peanuts" className="preview-image"/>
       <div style={{height: "30%"}}>
         <h1>{props.product.name}</h1>
         <p>${props.product.price.toFixed(2)}</p>
@@ -28,6 +28,21 @@ function Preview(props: {product: ProductContract}) {
       </div>
     </Link>
   );
+}
+
+function getImage(name: string) {
+  switch(name) {
+  case "almonds":
+    return ProductImages.almonds;
+  case "cashews":
+    return ProductImages.cashews;
+  case "pistachios":
+    return ProductImages.pistachios;
+  case "legumes":
+    return ProductImages.legumes;
+  default:
+    return ProductImages.peanuts;
+  }
 }
 
 export default Preview;
