@@ -2,7 +2,7 @@ import "./Product.css";
 import Navbar from "../../components/Navbar/Navbar";
 import { useLoaderData } from "react-router-dom";
 import { ProductContract } from "../../types";
-import productImg from "../../assets/sample-products/sample-product.png";
+import getImage from "../../productImages";
 import colorScheme from "../../colors";
 import { Rating } from "react-simple-star-rating";
 import { useState } from "react";
@@ -20,7 +20,7 @@ function Product() {
     <div style={{width: "100%", display: "flex", flexDirection: "column"}}>
       <Navbar location=""/>
       <div className="product-content">
-        <img src={productImg} alt={product.name} id="product-image"></img>
+        <img src={getImage(product.name)} alt={product.name} id="product-image"></img>
         <div className="product-text">
           <div id="name-and-tag">
             <p id="hot-product" style={{display: product.popularItem ? "block" : "none"}}>HOT</p>
