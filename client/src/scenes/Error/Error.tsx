@@ -4,8 +4,8 @@ import Button from "../../components/Button/Button";
 import { useRouteError } from "react-router-dom";
 import sadPeanut from "../../assets/sad-peanut.png"
 
-function ErrorElement() {
-  const errorMessage = useRouteError();
+function ErrorElement(props: {errorMessage?: string}) {
+  const errorMessage =  useRouteError();
   const listener = (): void => {
     window.alert("here's the error we received:\n\n" + errorMessage)
     console.log(errorMessage);

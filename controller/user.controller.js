@@ -18,6 +18,19 @@ userController.get('/users', (req, res) => {
     });
 });
 /**
+ * GET/
+ * retrieve and display user based on username
+ */
+userController.get('/user', (req, res) => {
+  const user = User.findOne({username: req.query.user.username})
+    .catch(err => res.status.send('unable to fetch user info\n' + err))
+  if(user == null) {
+    User.insertOne({email: req.query.user.email})
+  } else {
+    res.send(user)
+  }
+});
+/**
    * POST/
    * Add a new User to your database
    */

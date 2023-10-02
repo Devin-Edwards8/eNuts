@@ -4,15 +4,19 @@ import cartIcon from "../../assets/empty-cart-icon.png";
 import accountIcon from "../../assets/account-icon.png";
 import navIcon from "../../assets/nav-icon.png";
 import { useState } from "react";
+import {useAuth0} from "@auth0/auth0-react";
 
 function Navbar(props: { location: string }) {
   const paths = getPaths(props.location);
   const [loginPopup, setLoginPopup] = useState<"none" | "block">("none");
+  const [logoutPopup, setLogoutPopup] = useState<"none" | "block">("none");
+  const { loginWithRedirect, logout, isAuthenticated, user } = useAuth0();
   // const [accountPopup, setAccountPopup] = useState<"hidden" | "visible">(
   //   "hidden"
   // );
+  const [cartPopup, setCartPopup] = useState<"none" | "block">("none");
   const [navbar, showNav] = useState<"flex" | "">("");
-  const cartNum = 0; // change this to update cart icon
+  const cartNum = 0;
   let cartNumDisplayed = "";
   let cartNumVisibility: "visible" | "hidden" = "hidden";
   if (cartNum == 0) {
@@ -42,7 +46,7 @@ function Navbar(props: { location: string }) {
           <img
             src={cartIcon}
             alt="view cart button"
-            onClick={() => console.log("cart clicked")}
+            onClick={() => setCartPopup("block")}
           />
           <span
             className="cart-number"
@@ -53,15 +57,28 @@ function Navbar(props: { location: string }) {
           <img
             src={accountIcon}
             alt="view account information button"
-            onClick={() => setLoginPopup("block")}
+            onClick={() => {isAuthenticated ? setLogoutPopup("block") : setLoginPopup("block"); console.log(isAuthenticated)}}
           />
         </div>
       </nav>
       <div style={{ display: loginPopup }} className="screen-fill"
-        onClick={() => setLoginPopup("none")}>
-        <div className="login-popup">
+        onClick={() => {setLoginPopup("none"); console.log(isAuthenticated)}}>
+        <div className="login-popup" onClick={() => loginWithRedirect()}>
           <span className="login-text">log in / sign up</span>
           <span>→</span>
+        </div>
+      </div>
+      <div style={{ display: logoutPopup }} className="screen-fill"
+        onClick={() => setLogoutPopup("none")}>
+        <div className="login-popup" onClick={() => logout({logoutParams: {returnTo: "https://enuts.devinedwards.xyz/"}})}>
+          <span className="login-text">log out</span>
+          <span>→</span>
+        </div>
+      </div>
+      <div style={{ display: cartPopup }} className="screen-fill"
+        onClick={() => setCartPopup("none")}>
+        <div className="cart-popup login-popup">
+          <span className="login-text">Your cart is empty.</span>
         </div>
       </div>
     </div>
