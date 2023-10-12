@@ -48,8 +48,22 @@ function About() {
   const submitMessage = async() => {
     
     messageBox.current?.close();
-    showMessageSent(true);
+
+    fetch("https://enuts.devinedwards.xyz/mail/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        "name": form.current?.elements[0],
+        "email": form.current?.email.valueOf(),
+        "message": form.current?.message.valueOf() 
+      })
+    })
+      .then(res => console.log(res))
+      .catch(err => console.log(err));
     
+    showMessageSent(true);
     await sleep(3000)
       .then(() => showMessageSent(false))
       .catch(e => window.alert(e))
@@ -71,9 +85,9 @@ function About() {
           <dialog ref={messageBox}>
             <h1>What's Up?</h1>
             <form ref={form}>
-              <input id="name" placeholder="Name *" type="text" />
-              <input id="email" placeholder="Email *" type="email" />
-              <textarea id="message" rows={4} cols={80} maxLength={320} placeholder="Message *"/>
+              <input id="name" name="name" placeholder="Name *" type="text" required={true}/>
+              <input id="email" name="email" placeholder="Email *" type="email" required={true}/>
+              <textarea id="message" name="message" rows={4} cols={80} maxLength={320} placeholder="Message *" required={true}/>
             </form>
             <div className="button-container">
               <Button buttonType="secondary" textType="normal-text-color" listener={closeMessage}>Cancel</Button>

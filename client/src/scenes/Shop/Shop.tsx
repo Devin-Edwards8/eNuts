@@ -58,8 +58,8 @@ function Shop() {
             </div>
           </div>
           <div className="product-container">
-            {products.map((product: ProductContract) => 
-              <Preview product={product}/>)}
+            {products.map((product: ProductContract, i: number) => 
+              <Preview product={product} key={i}/>)}
           </div>
         </div>
       </div>

@@ -10,7 +10,7 @@ function Navbar(props: { location: string }) {
   const paths = getPaths(props.location);
   const [loginPopup, setLoginPopup] = useState<"none" | "block">("none");
   const [logoutPopup, setLogoutPopup] = useState<"none" | "block">("none");
-  const { loginWithRedirect, logout, isAuthenticated, user } = useAuth0();
+  const { loginWithRedirect, logout, isAuthenticated } = useAuth0();
   // const [accountPopup, setAccountPopup] = useState<"hidden" | "visible">(
   //   "hidden"
   // );

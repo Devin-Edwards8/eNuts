@@ -11,7 +11,7 @@ function Home() {
 
   if(isLoading) { return <p>loading your data</p>}
 
-  if(error) {return <ErrorElement />}
+  if(error) {return <ErrorElement error={error.message}/>}
 
   return (
     <div>
