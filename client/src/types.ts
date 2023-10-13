@@ -7,3 +7,8 @@ export type ProductContract = {
     popularItem: boolean,
     _id: typeof ObjectId
 }
+
+export type UserContract = {
+    email: string,
+    cart: ProductContract[]
+}

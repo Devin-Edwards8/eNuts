@@ -9,6 +9,7 @@ import Product from "./scenes/Product/Product";
 import { ProductContract } from "./types";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Auth0Provider } from "@auth0/auth0-react";
 
 const router = createBrowserRouter([
   { 
@@ -52,6 +53,14 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Auth0Provider
+      domain="dev-my0uthfp11u0e8bi.us.auth0.com"
+      clientId="WslQyr2n9dwKHvV9H1QCJkBIFvJupJxi"
+      authorizationParams={{
+        redirect_uri: "http://localhost:5173"
+      }}>
+      <RouterProvider router={router} />
+    </Auth0Provider>
+    
   </React.StrictMode>
 );

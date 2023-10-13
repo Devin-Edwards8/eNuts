@@ -2,9 +2,17 @@ import "./Home.css";
 import Navbar from "../../components/Navbar/Navbar";
 import PromotionBar from "../../components/PromotionBar/PromotionBar";
 import Button from "../../components/Button/Button";
-import walnuts from "../../assets/walnuts.png"
+import walnuts from "../../assets/walnuts.png";
+import { useAuth0 } from "@auth0/auth0-react";
+import ErrorElement from "../Error/Error";
 
 function Home() {
+  const {isLoading, error} = useAuth0();
+
+  if(isLoading) { return <p>loading your data</p>}
+
+  if(error) {return <ErrorElement error={error.message}/>}
+
   return (
     <div>
       <Navbar location='home'/>

@@ -105,6 +105,15 @@
     cursor: pointer;
 }
 
+cart-popup {
+    cursor: default;
+    width: fit-content;
+}
+
+cart-popup:hover {
+    text-decoration: none;
+}
+
 .login-popup span {
     margin: 0 .4rem;
     font-size: 1rem;
