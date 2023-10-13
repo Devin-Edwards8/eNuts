@@ -5,12 +5,15 @@ An online shop for delicious nuts.
 ## Overview
 This is my first full-stack project, using MongoDB, React, Express and Node. I chose a mock eCommerce company selling one of my favorite foods: nuts.
 
+### Known Bugs
+- loading from url path results in 404
+- mobile map loading can be very slow
+
 ### Shopping
 The most critical feature, of course, is to be able to browse and purchase products. 
 #### Features
 - browse products in shop tab
-- filter on ratings, price, type
-- add to cart and checkout
+
 #### Tech
 - MongoDB Atlas used to store product info
 - Express API provides endpoints for front-end
@@ -25,7 +28,7 @@ The website also shows "locations" of our nut stores.
 - Google Maps Embed API used to generate location
 
 ## Future Development
-As I work, I continue to find new, exciting features I want to add.
+As I work, I continue to find new and exciting features I want to add.
 
 ### Users
 Objectives:
