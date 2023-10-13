@@ -6,6 +6,7 @@ import getImage from "../../productImages";
 import colorScheme from "../../colors";
 import { Rating } from "react-simple-star-rating";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Product() {
   const product = useLoaderData() as ProductContract;
@@ -17,9 +18,11 @@ function Product() {
   }
 
   return ( 
-    <div style={{width: "100%", display: "flex", flexDirection: "column"}}>
+    <div style={{width: "100%", display: "flex", flexDirection: "column", minHeight: "90vh", marginTop: "10vh"}}>
       <Navbar location=""/>
       <div className="product-content">
+        <Link id="product-path" to="../shop">← <span>Back to Shop</span></Link>
+        <Link id="product-path-mobile" to="../shop">← <span>Shop</span></Link>
         <img src={getImage(product.name)} alt={product.name} id="product-image"></img>
         <div className="product-text">
           <div id="name-and-tag">

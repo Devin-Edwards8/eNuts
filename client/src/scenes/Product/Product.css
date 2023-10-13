@@ -3,6 +3,7 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
+    min-height: 90vh;
 }
 
 .product-text {
@@ -11,6 +12,26 @@
     width: 94%;
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
+    flex: 1;
+}
+
+#product-path, #product-path-mobile {
+    position: absolute;
+    top: 14vh;
+    left: 2.5%;
+    text-decoration: none;
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+#product-path {
+    display: none;
+}
+
+#product-path:hover {
+    font-size: 1.1rem;
+    transition: 0.3s;
 }
 
 #product-name {
@@ -113,6 +134,14 @@
         width: 50vw;
         height: auto;
         max-height: 80vh;
+    }
+
+    #product-path {
+        display: block;
+    }
+
+    #product-path-mobile {
+        display: none;
     }
 
     .rule {
