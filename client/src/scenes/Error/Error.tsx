@@ -4,7 +4,7 @@ import Button from "../../components/Button/Button";
 import { useRouteError } from "react-router-dom";
 import sadPeanut from "../../assets/sad-peanut.png"
 
-function ErrorElement(props: {error: string}) {
+function ErrorElement(props: {error?: string}) {
   let errorMessage = useRouteError();
   if(errorMessage == undefined) {
     errorMessage = props.error;

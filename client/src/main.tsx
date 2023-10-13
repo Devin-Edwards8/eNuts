@@ -57,7 +57,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
       domain="dev-my0uthfp11u0e8bi.us.auth0.com"
       clientId="WslQyr2n9dwKHvV9H1QCJkBIFvJupJxi"
       authorizationParams={{
-        redirect_uri: "http://localhost:5173"
+        redirect_uri: "http://enuts.devinedwards.xyz/"
       }}>
       <RouterProvider router={router} />
     </Auth0Provider>
