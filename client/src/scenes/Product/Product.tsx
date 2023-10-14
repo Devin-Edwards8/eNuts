@@ -2,7 +2,6 @@ import "./Product.css";
 import Navbar from "../../components/Navbar/Navbar";
 import { useLoaderData } from "react-router-dom";
 import { ProductContract } from "../../types";
-import getImage from "../../productImages";
 import colorScheme from "../../colors";
 import { Rating } from "react-simple-star-rating";
 import { useState } from "react";
@@ -23,17 +22,17 @@ function Product() {
       <div className="product-content">
         <Link id="product-path" to="../shop">← <span>Back to Shop</span></Link>
         <Link id="product-path-mobile" to="../shop">← <span>Shop</span></Link>
-        <img src={getImage(product.name)} alt={product.name} id="product-image"></img>
+        <img src={product.imageUrl} alt={product.name} id="product-image"></img>
         <div className="product-text">
           <div id="name-and-tag">
             <p id="hot-product" style={{display: product.popularItem ? "block" : "none"}}>HOT</p>
             <h1 id="product-name">{product.name}</h1>
           </div>
           <div className="star-rating">
-            <p>3.5</p>
-            <Rating initialValue={3.5} allowFraction={true} disableFillHover={true} allowHover={false} fillColor={colorScheme.primaryColor} 
+            <p>{product.rating}</p>
+            <Rating initialValue={product.rating} allowFraction={true} disableFillHover={true} allowHover={false} fillColor={colorScheme.primaryColor} 
               emptyColor={colorScheme.primaryColor} emptyStyle={{opacity: .4}} size={20} readonly={true}/>
-            <p>(90)</p>
+            <p>({product.numRatings})</p>
           </div>
           <p id="product-price">${product.price.toFixed(2)}</p>
           <div className="rule"/>

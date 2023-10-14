@@ -3,9 +3,10 @@
     width: 100%;
     padding: 1vh 1vw;
     text-align: left;
-    border: solid .01rem var(--secondary-color);
+    outline: solid 1px var(--secondary-color);
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: flex-start;
     text-decoration: none;
 }
@@ -18,21 +19,23 @@
 }
 
 .preview:hover {
-    border: solid 0.01rem var(--accent-color);
+    outline: solid 1px var(--accent-color);
     cursor: pointer;
 }
 
 .preview .star-rating {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    gap: .4rem;
+    align-items: flex-end;
+    gap: .2rem;
+    height: 28px;
 }
 
 .preview .star-rating p {
     font-size: 1rem;
     color: var(--primary-color);
     margin: 0;
+    align-self: center;
 }
 
 .preview h1 {
