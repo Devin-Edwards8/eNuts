@@ -20,17 +20,35 @@ input[type="checkbox"] {
   height: 1.1rem;
   width: 1.1rem;
   border-radius: .3rem;
-  outline: solid 1px var(--secondary-color);
   cursor: pointer;
 }
 
-.dropdown:hover input ~ .check {
-    background-color: var(--secondary-color);
+.normal-check {
+  outline: solid 1px var(--secondary-color);
 }
 
-.dropdown input:checked ~ .check {
+.dropdown:hover input:checked ~ .normal-check, .dropdown:hover input ~ .normal-check {
+  background-color: var(--secondary-color);
+  outline: none;
+}
+
+.dropdown input:checked ~ .normal-check {
     outline: solid 1px var(--accent-color);
     background-color: var(--accent-color);
+}
+
+.inverted-check {
+  background-color: var(--accent-color);
+}
+
+.dropdown:hover input:checked ~ .inverted-check, .dropdown:hover input ~ .inverted-check {
+  background-color: var(--secondary-color);
+  outline: none;
+}
+
+.dropdown input:checked ~ .inverted-check {
+    outline: solid 1px var(--secondary-color);
+    background-color: var(--background-color);
 }
 
 .script .geekmark:after {

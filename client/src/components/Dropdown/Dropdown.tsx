@@ -6,7 +6,8 @@ type HandleOption = (field: string, checked: boolean) => void
 function Dropdown(props: {title: string, options: string[], filter: HandleOption, sort: HandleOption}) {
   const [revealed, reveal] = useState(true)
   const initChecked: { [key: string]: boolean } = {}
-  props.options.forEach(option => {initChecked[option] = false})
+  const startChecked = props.title === "Nut"
+  props.options.forEach(option => {initChecked[option] = startChecked})
   const [checked, setChecked] = useState<{ [key: string]: boolean }>(initChecked)
   const handleReveal = () => {
     revealed ? reveal(false) : reveal(true)
@@ -42,7 +43,7 @@ function Dropdown(props: {title: string, options: string[], filter: HandleOption
             <input type="checkbox" id={"title-check-" + String(i)} value={option} name={option} 
               onChange={e => handleOption(e)}/>
             {option}
-            <span className="check" />
+            <span className={"check" + (props.title === "Nut" ? " inverted-check" : " normal-check")} />
           </label>
         </div>
       ): <></>}

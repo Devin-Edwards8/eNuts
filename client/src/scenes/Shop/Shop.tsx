@@ -9,7 +9,7 @@ import { useState } from "react";
 function Shop() {
   const [products, setProducts] = useState<ProductContract[]>(useLoaderData() as ProductContract[])
   const [limit, setLimit] = useState(6);
-  const [filter, setFilter] = useState<{[key: string]: object | string[]}>({"nutType": []})
+  const [filter, setFilter] = useState<{[key: string]: object | string[]}>({"nutType": ["almond", "peanut", "pistachio", "cashew", "legume"]})
   const [sort, setSort] = useState<{[key: string]: number}>({})
   const handleSelect = async(e: React.ChangeEvent<HTMLSelectElement>)  => {
     setLimit(Number(e.currentTarget.value))
@@ -48,7 +48,7 @@ function Shop() {
     if(checked) {
       newSort[sortMapping[0]] = sortMapping[1];
     } else {
-      delete newSort[sortMapping[0]]
+      delete newSort[sortMapping[0]];
     }
     const newProducts = await fetch(hydrateRequestUrl(limit, newSort, filter))
       .then(res => res.json())
