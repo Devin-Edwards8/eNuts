@@ -3,8 +3,11 @@ import { ObjectId } from "mongodb";
 export type ProductContract = {
     name: string, 
     price: number, 
-    salePrice?: number, 
+    discountPrice?: number, 
     popularItem: boolean,
+    rating: number,
+    numRatings: number,
+    imageUrl: string,
     _id: typeof ObjectId
 }
 

@@ -3,7 +3,6 @@ import { Rating } from "react-simple-star-rating";
 import { Link } from "react-router-dom";
 import colorScheme from "../../colors";
 import cartIcon from "../../assets/add-to-cart-icon.png";
-import getImage from "../../productImages";
 import { ProductContract } from "../../types";
 
 function Preview(props: {product: ProductContract}) {
@@ -15,15 +14,16 @@ function Preview(props: {product: ProductContract}) {
         onClick={e => e.preventDefault()}/>
 
       {/* relative elements */}
-      <img src={getImage(props.product.name)} alt="can of planter's peanuts" className="preview-image"/>
-      <div style={{height: "30%"}}>
+      <img src={props.product.imageUrl} alt={props.product.name} className="preview-image" />
+      <div>
         <h1>{props.product.name}</h1>
-        <p>${props.product.price.toFixed(2)}</p>
+        {props.product.discountPrice == null ? 
+          <p>${props.product.price.toFixed(2)}</p> :
+          <p><s style={{color: "#8b0000"}}>${props.product.price.toFixed(2)}</s> ${props.product.discountPrice.toFixed(2)}</p>}
         <div className="star-rating">
-          <p>3.5</p>
-          <Rating initialValue={3.5} allowFraction={true} disableFillHover={true} allowHover={false} fillColor={colorScheme.primaryColor} 
-            emptyColor={colorScheme.primaryColor} emptyStyle={{opacity: .4}} size={20} readonly={true}/>
-          <p>(90)</p>
+          <Rating initialValue={props.product.rating} allowFraction={true} disableFillHover={true} allowHover={false} fillColor={colorScheme.primaryColor} 
+            emptyColor={colorScheme.primaryColor} emptyStyle={{opacity: .4}} size={22} readonly={true}/>
+          <p>({props.product.numRatings})</p>
         </div>
       </div>
     </Link>

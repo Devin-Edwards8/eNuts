@@ -1,8 +1,14 @@
 import "./Dropdown.css"
 import { useState } from "react";
 
-function Dropdown(props: {title: string, options: string[]}) {
-  const [revealed, reveal] = useState(false)
+type HandleOption = (field: string, checked: boolean) => void
+
+function Dropdown(props: {title: string, options: string[], filter: HandleOption, sort: HandleOption}) {
+  const [revealed, reveal] = useState(true)
+  const initChecked: { [key: string]: boolean } = {}
+  const startChecked = props.title === "Nut"
+  props.options.forEach(option => {initChecked[option] = startChecked})
+  const [checked, setChecked] = useState<{ [key: string]: boolean }>(initChecked)
   const handleReveal = () => {
     revealed ? reveal(false) : reveal(true)
   }
@@ -10,6 +16,18 @@ function Dropdown(props: {title: string, options: string[]}) {
     fontSize: ".7rem",
     margin: 0,
     padding: 0
+  }
+  const handleOption = async(e: React.ChangeEvent<HTMLInputElement>) => {
+    const option = e.currentTarget.value;
+    const tempChecked = {...checked}
+    if(checked[option] == false) {
+      tempChecked[option] = true;
+      props.title === "Sort By" ? props.sort(option, true) : props.filter(option, true);
+    } else {
+      tempChecked[option] = false;
+      props.title === "Sort By" ? props.sort(option, false) : props.filter(option, false);
+    }
+    setChecked(tempChecked);
   }
 
   return (
@@ -22,9 +40,10 @@ function Dropdown(props: {title: string, options: string[]}) {
       {revealed ? props.options.map((option, i) => 
         <div key={i} style={{position: "relative", height: "1.3rem", margin: "0 0 .3rem 3%"}}>
           <label className="dropdown">
-            <input type="checkbox" id={"title-check-" + String(i)} value={option} name={option} />
+            <input type="checkbox" id={"title-check-" + String(i)} value={option} name={option} 
+              onChange={e => handleOption(e)}/>
             {option}
-            <span className="check" />
+            <span className={"check" + (props.title === "Nut" ? " inverted-check" : " normal-check")} />
           </label>
         </div>
       ): <></>}
