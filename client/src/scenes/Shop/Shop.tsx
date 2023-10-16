@@ -147,7 +147,7 @@ function getSortMapping(filterName: string): [string, number] {
 }
 
 function hydrateRequestUrl(limit: number, sort: {[key: string]: number}, filter: {[key: string]: object | string[]}) {
-  return `http://enuts.devinedwards.xyz/server/products?numItems=${limit}&sort=${JSON.stringify(sort)}&filter=${JSON.stringify(filter)}`
+  return `https://enuts.devinedwards.xyz/server/products?numItems=${limit}&sort=${JSON.stringify(sort)}&filter=${JSON.stringify(filter)}`
 }
 
 export default Shop;
